@@ -1,0 +1,18 @@
+import math
+def theatre_square(n,m,a):
+    return math.ceil(n/a)*math.ceil(m/a)
+
+print(theatre_square(6,6,4))
+
+
+
+#Literature:
+'''
+math.ceil()=a method that rounds UP the floating point to it's nearest largest integer.
+example: math.ceil(0.000000001)=1
+
+The opposite of math.cil() is math.floor()
+
+math.floor()= a method that rounds DOWN the floating point to it's nearest smallest integer. 
+example: math.floor(2.99999999)=2
+'''
