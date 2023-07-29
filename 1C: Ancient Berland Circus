@@ -1,6 +1,12 @@
 import math
-def circus(x1,y1,x2,y2,x3,y3):
-    area = abs(0.5*(((x1*y2)+(x2*y3)+(y3*x1))-((y1*x2)+(y2*x3)+(y3*x1))))
+def circus(a):
+    area = abs(0.5*(((a[0][0]*a[0][1])+(a[1][0]*a[2][1])+(a[2][0]*a[0][1]))-((a[0][1]*a[1][0])+(a[1][1]*a[2][0])+(a[2][1]*a[0][0]))))
     return float(math.ceil(area))
 
-print(circus(0,0,1,1,0,1))
+
+a=[]
+for i in range(3):
+    x,y = map(float,input().split(' '))
+    a.append([x,y])
+    
+print("{:.8f}".format(circus(a)));
