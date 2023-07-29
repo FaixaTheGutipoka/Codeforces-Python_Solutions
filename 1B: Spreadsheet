@@ -1,0 +1,40 @@
+def spreadsheet(n):
+    a=list(n)
+    if a[0]=='R':
+        b=[]
+        c=[]
+        i=1
+        while a[i]!='C':
+            b.append(a[i])
+            i+=1
+        b=''.join(b)
+        for i in range(len(b)+2,len(a)):
+            c.append(a[i])
+        c=int(''.join(c))
+        d=''
+        while c>0:
+            if c%26==0:
+                c=c//26-1
+                d+='Z'
+            else:
+                x=c%26
+                c=c//26
+                d+=chr(64+x)
+        return d[::-1]+b
+
+    else:
+        c=''
+        d=0
+        e=''.join(filter(lambda i: i.isdigit(), n))
+        c=n[:len(e)]
+        for i in range(len(c)):
+            k=ord(c[i])-64
+            d=d*26+k
+        return 'R'+e+'C'+str(d)
+
+
+print(spreadsheet('BC23'))
+print(spreadsheet('R23C55'))
+
+
+
